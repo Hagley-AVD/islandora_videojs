@@ -1,7 +1,7 @@
 <video id="islandora_videojs" <?php if (!$responsive): ?>width="640" height="360"<?php endif; ?>
   <?php if (!$center_play_button): ?>class="video-js vjs-default-skin"
   <?php else: ?>class="video-js vjs-default-skin vjs-big-play-centered" <?php endif; ?>
-    controls
+    controls loadingSpinner
   preload="auto"
   <?php if (isset($tn)): ?>
     poster="<?php print $tn; ?>"
@@ -9,7 +9,7 @@
   <?php if ($responsive): ?>
     data-setup='{"fluid": true}'
   <?php else: ?>
-    data-setup="{}"
+    data-setup='{"controlBar": {"volumeMenuButton":{"inline":false, "vertical":true}}}'
   <?php endif; ?>
   >
   <?php foreach ($sources as $source): ?>
